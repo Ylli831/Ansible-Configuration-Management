@@ -1,0 +1,13 @@
+---
+- name: Create .ssh directory
+  file:
+    path: /home/ubuntu/.ssh
+    state: directory
+    mode: 0700
+
+- name: Add public key to authorized_keys
+  authorized_key:
+    user: ubuntu
+    state: present
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC5dQtpi9+tpbvY72jOfsjF+PnNGaxqUI6DGAGbvywVbW3RA/mBKVWX+7xFyrVZaKQZ74Z6Uwvg3i1ZEAizgxS4Wd/LwyE74JPqBsvPr21b025pjz6AmziYXbDr7YYG9HMHUeSGMZFpi+Y694tASNWIhqOgWYep/xrFBfINumHv/bEbnc/czKyiZ+0uerfZWQWVFl7NQU6uoRw9F6i7cvFZj1N3bI2h+VEL/0n+cq1Qvy39Mz1nExHzCoa/zt8XQYHyQ30sGI5WHcSgY6tSLUA1tnEz9A4TEFuGsul4kHl/MbiGKf1oqFXAdYTMbJ3d5HsmKlkH5XO2Ijk1S9Hf+BtVOkQ1zKyTSXzCcrZUsBbRYXLzV+uh73UOvaBymfxAJbHYQYLY8GddqcbBcw6uF4Xww2pBVPCqh2Kfietnqek4DmKKBaVIjy1zXG4kxIp7aybn+adZvyLKxnxJSrW8iLI0scJOpRzd8ofkqBFm2BcJ/wfBfe+W0PJR6Q4n+gr71GPT5nVTKb2/6Olxe4gdaERKHlc4qIgSFs48XyWdb7BPWjm3k3jTuJqfSvhEITsoIIfoSTSEAidvVqFtTjm308kpNpvMosKFVQzLMmxiGxqFduYAJflSbR9ANmsWBPXB2GeoHH5li+xKbtfrRHoK8tmKhlcvdkZNFIAjKkBMozYwSQ== ylli8822@gmail.com"
+
